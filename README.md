@@ -1,0 +1,1 @@
+Add a README.md file to your root file. Edit it to include the name of the application (this can be updated later) and a brief description of the project, as well as a list of all the authors (your group members!).
