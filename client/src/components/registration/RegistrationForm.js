@@ -28,7 +28,7 @@ const RegistrationForm = () => {
       };
     }
 
-    if (password.trim() == "") {
+    if (password.trim() === "") {
       newErrors = {
         ...newErrors,
         password: "is required",
@@ -49,14 +49,14 @@ const RegistrationForm = () => {
       }
     }
 
-    if (firstName.trim() == "") {
+    if (firstName.trim() === "") {
       newErrors = {
         ...newErrors,
         firstName: "is required",
       };
     }
 
-    if (lastName.trim() == "") {
+    if (lastName.trim() === "") {
       newErrors = {
         ...newErrors,
         lastName: "is required",
