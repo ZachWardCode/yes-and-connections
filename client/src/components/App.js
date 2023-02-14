@@ -23,12 +23,17 @@ const App = (props) => {
     fetchCurrentUser()
   }, [])
 
+  let greeting = "Welcome to Yes And Connections"
+  if(currentUser) {
+    greeting += `, ${currentUser.firstName} ${currentUser.lastName}!`
+  }
+
   return (
     <Router>
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/">
-          <h2>Hello from react</h2>
+          <h2>{greeting}</h2>
         </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
