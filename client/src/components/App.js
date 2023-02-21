@@ -8,7 +8,8 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 
-import TeamsListPage from "./TeamsListPage.js";
+import TheatersListPage from "./TheatersListPage";
+import TeamsListPage from "./TeamsListPage";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -37,6 +38,7 @@ const App = (props) => {
         <Route exact path="/">
           <h2>{greeting}</h2>
         </Route>
+        <Route exact path="/theaters" component={TheatersListPage} />
         <Route exact path="/teams" component={TeamsListPage} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />

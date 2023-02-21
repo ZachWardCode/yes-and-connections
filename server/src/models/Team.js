@@ -12,7 +12,7 @@ class Team extends unique(Model) {
   }
 
   static get relationMappings() {
-    const { User } = require("./index")
+    const { User, Theater, Show, TeamShowRegistration } = require("./index")
 
     return {
       users: {
@@ -21,6 +21,37 @@ class Team extends unique(Model) {
         join: {
           from: "teams.id",
           to: "users.teamId"
+        }
+      },
+
+      theater: {
+        relation: Model.BelongsToOneRelation,
+        modelClass: Theater,
+        join: {
+          from: "teams.theaterId",
+          to: "theaters.id"
+        }
+      },
+
+      shows: {
+        relation: Model.ManyToManyRelation,
+        modelClass: Show,
+        join: {
+          from: "teams.id",
+          through: {
+            from: "teamShowRegistrations.teamId",
+            to: "teamShowRegistrations.showId"
+          },
+          to: "shows.id"
+        }
+      },
+
+      teamShowRegistrations: {
+        relation: Model.HasManyRelation,
+        modelClass: TeamShowRegistration,
+        join: {
+          from: "teams.id",
+          to: "teamShowRegistrations.teamId"
         }
       }
     }
