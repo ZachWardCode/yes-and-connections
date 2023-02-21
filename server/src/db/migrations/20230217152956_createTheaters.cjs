@@ -6,9 +6,11 @@
  * @param {Knex} knex
  */
 exports.up = async (knex) => {
-  return knex.schema.createTable("teams", (table) => {
+  return knex.schema.createTable("theaters", (table) => {
     table.bigIncrements("id")
     table.string("name").notNullable().unique()
+    table.string("location").notNullable()
+    table.text("tagline")
     table.text("description")
     table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now())
     table.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now())
@@ -19,5 +21,5 @@ exports.up = async (knex) => {
  * @param {Knex} knex
  */
 exports.down = (knex) => {
-  return knex.schema.dropTableIfExists("teams")
+  return knex.schema.dropTableIfExists("theaters")
 }
