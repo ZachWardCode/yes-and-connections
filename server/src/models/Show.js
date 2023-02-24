@@ -6,14 +6,23 @@ class Show extends Model {
   }
 
   static get relationMappings() {
-    const { Theater, Team, TeamShowRegistration } = require("./index")
+    const { User, Theater, Team, TeamShowRegistration } = require("./index")
 
     return {
+      user: {
+        relation: Model.BelongsToOneRelation,
+        modelClass: User,
+        join: {
+          from: "shows.userId",
+          to: "users.id"
+        }
+      },
+
       theater: {
         relation: Model.BelongsToOneRelation,
         modelClass: Theater,
         join: {
-          from: "show.theaterId",
+          from: "shows.theaterId",
           to: "theaters.id"
         }
       },
@@ -45,12 +54,11 @@ class Show extends Model {
   static get jsonSchema() {
     return {
       type: "object",
-      required: ["name", "date", "time"],
+      required: ["name", "eventTiming"],
       properties: {
         name: { type: "string" },
         description: { type: "string" },
-        date: { type: ["string", "integer"] },
-        time: { type: ["string", "integer"] }
+        eventTiming: { type: "string" }
       }
     }
   }
