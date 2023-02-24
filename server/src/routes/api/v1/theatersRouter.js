@@ -19,4 +19,17 @@ theatersRouter.get("/", async (req, res) => {
   }
 })
 
+theatersRouter.get("/:id", async (req, res) =>{
+	const { id } = req.params
+	try {
+		const theater = await Theater.query().findById(id)
+		if (theater) {
+			const serializedTheater = await TheaterSerializer.getSummary(theater)
+			return res.status(200).json({ theater: serializedTheater })
+		}
+	} catch (error) {
+		return res.status(500).json({ errors: error })
+	}
+})
+
 export default theatersRouter
