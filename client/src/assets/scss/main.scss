@@ -1,7 +1,14 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 // place global css here
+$main-dark-blue: #002663;
+$main-yellow: #ffc82e;
+$main-red: #e70f47;
+$main-light-blue: #38aecc;
+$main-off-white: #edf7f5;
+
 *,
 *::before,
 *::after {
@@ -11,4 +18,87 @@
 :root {
   -moz-tab-size: 4;
   tab-size: 4;
+}
+
+body {
+  background-color: $main-off-white;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.header {
+  font-family: monospace;
+  padding: 20px 20px 0px 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px $main-light-blue;
+  font-size: 5em;
+}
+
+.subheader {
+  font-family: monospace;
+  padding: 20px 20px 0px 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px $main-light-blue;
+  font-size: 2em;
+}
+
+.header_smaller {
+  font-family: monospace;
+  padding: 20px 20px 0px 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px $main-light-blue;
+  font-size: 3em;
+}
+
+.subtitle {
+  color: #000000;
+  text-align: justify;
+  padding: 0em 5em 0em 5em;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3em;
+  color: $main-yellow;
+  z-index: 10;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: $main-yellow;
+  z-index: 10;
+  user-select: none;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.00);
+}
+
+.slider {
+  background-color: $main-off-white;
+  height: max-content;
+  width: 100%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 700px;
 }

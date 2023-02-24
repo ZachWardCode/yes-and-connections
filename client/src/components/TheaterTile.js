@@ -5,11 +5,10 @@ const TheaterTile = props => {
   const { id, name, location, tagline, description } = props
 
   return (
-    <div>
-      <h3>{name}</h3>
-      <h4>{location}</h4>
-      <h5>{tagline}</h5>
-      <p>{description}</p>
+    <div className="callout cell large-4 medium-6 small-12 text-center theater-tile">
+      <h3 className="theater-tile_header">{name}</h3>
+      <h4 className="theater-tile_body">{location}</h4>
+      <h5 className="game-tile_body">{tagline}</h5>
     </div>
   )
 }
