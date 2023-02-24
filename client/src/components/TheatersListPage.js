@@ -47,20 +47,22 @@ const TheatersListPage = props => {
       <div className="grid-container text-center">
         <div>
           <h1 className="header">Yes And Connections</h1>
-          <p className="subheader">For Performers to Stay Connected</p>
+          <p className="subheader">A Personalized Platform For Improv Theater Communities</p>
         </div>
         <hr></hr>
         <div>
           <h4 className="header_smaller">What is Yes and Connections?</h4>
           <div className="subtitle">
-            <p>Yes And Connections is a platform made for improv performers, by an improv performer. Performing at an improv theaters is a wonderful experience and the community and friends it brings you is often the best part! This site is the best place to stay connected with your fellow cast members at the theater you perform at!</p> 
-            <p>Bonding and connection plays a huge role in improv and Yes And Connections makes sure your cast stays in touch with each other as well as up-to-date with what's happening at your theater. This leads a stronger community, happier performers, and, wouldn't you know it, better shows!</p> 
-            <p>If you are the owner of a theater that isn't using this site, register now! Your performers will thank you and your community will become even closer. We all know that performers come for the laugh, but in the end we stay for the people.</p>
-            <p>Yes And Connections breaks down the barriers of mismatching social media use and get rid of the difficulty of performers needing to maintain handfuls of group chats just to stay in the loop and makes plans with their friends for showtime.</p> 
-            <p>If you're a performer at a theater that is registered on this site, find your theater below and sign in or sign up if you haven't and get connected to your community! If you're a performer at a theater that hasn't registered, reach out to management and let them know you've found Yes And Connections and the theater needs to register to make your life and theirs a whole lot easier!</p>
+            <p>Yes And Connections is a communication platform for improv theater's performers and staff to communicate, coordinate, and keep in touch. Improv is about fun and the community that comes with it is often the best part. In this busy day age Yes And Connections offers your theaters community a convenient way to stay connected without all the hassle of juggling group texts or forever nested email chains that no one reads or sees.</p> 
+            <br />
+            <p>Bonding and connection plays a huge role in improv and Yes And Connections makes sure your cast has an easy way to coordinate after show hangouts and makes it possible for your cast and staff to stay in touch with each other, as well as up-to-date with what's happening at your theater. This leads a stronger community, happier performers, and, wouldn't you know it, better shows!</p> 
+            <br />
+            <p>If you are the owner of a theater or a performer at one and the theater isn't using this site, register now! Your performers will thank you and your community will become even closer. We all know that performers come for the laugh, but in the end we stay for the people.</p>
           </div>
         </div>
+        <br />
         <hr></hr>
+        <br />
         <div className="grid-x grid-margin-x">
           {theaterTiles}
         </div>
