@@ -63,7 +63,7 @@ const TheatersListPage = props => {
         <br />
         <hr></hr>
         <br />
-        <div className="grid-x grid-margin-x">
+        <div className="grid-x grid-margin-x text-center">
           {theaterTiles}
         </div>
       </div>

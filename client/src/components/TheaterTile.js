@@ -2,11 +2,11 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 const TheaterTile = props => {
-  const { id, name, location, tagline, description } = props
+  const { id, name, location, tagline } = props
 
   return (
     <div className="callout cell large-4 medium-6 small-12 text-center theater-tile">
-      <h3 className="theater-tile_header">{name}</h3>
+      <h3 className="theater-tile_header"><Link to={`/theaters/${id}`}>{name}</Link></h3>
       <h4 className="theater-tile_body">{location}</h4>
       
       <hr />
