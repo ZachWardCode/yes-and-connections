@@ -3,7 +3,7 @@ import UserSerializer from "./UserSerializer.js"
 class TeamSerializer {
   static async getSummary(team) {
 
-    const allowedAttributes = ["id", "name", "description"]
+    const allowedAttributes = ["id", "name", "description", "theaterId"]
 
     let serializedTeam = {}
 

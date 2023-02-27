@@ -1,3 +1,4 @@
+import ShowSerializer from "./ShowSerializer.js"
 import TeamSerializer from "./TeamSerializer.js"
 
 class TheaterSerializer {
@@ -10,6 +11,15 @@ class TheaterSerializer {
     for (const attribute of allowedAttributes) {
       serializedTheater[attribute] = theater[attribute]
     }
+
+    const showsData = await theater.$relatedQuery("shows")
+    const shows = await Promise.all(showsData.map( async (show) => {
+      const serializedShow = ShowSerializer.getSummary(show)
+
+      return serializedShow
+    }))
+
+    serializedTheater.shows = shows
 
     const teamsData = await theater.$relatedQuery("teams")
     const teams = await Promise.all(teamsData.map( async (team) => {
