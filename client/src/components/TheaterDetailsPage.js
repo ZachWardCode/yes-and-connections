@@ -4,6 +4,7 @@ import { TheaterDetailsSliderData } from "./TheaterDetailsSliderData";
 import TheaterDetailsImageSlider from "./TheaterDetailsImageSlider";
 
 import TeamsList from "./TeamsList";
+import ShowsList from "./ShowsList";
 
 const TheaterDetailsPage = (props) => {
   const [theater, setTheater] = useState({
@@ -11,6 +12,7 @@ const TheaterDetailsPage = (props) => {
     location: "",
     tagline: "",
     description: "",
+    shows: [],
     teams: []
   })
 
@@ -46,6 +48,11 @@ const TheaterDetailsPage = (props) => {
           <h2>{theater.tagline}</h2>
           <p className="subtitle">{theater.description}</p>
         </div>
+        <ShowsList
+          key={theater.theaterId}
+          theaterId={theaterId}
+          shows={theater.shows}
+        />
         <TeamsList
           key={theater.theaterId}
           theaterId={theaterId}

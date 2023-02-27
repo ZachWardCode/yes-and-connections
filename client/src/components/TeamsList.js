@@ -14,7 +14,7 @@ const TeamsList = props => {
 
   let showTeams = teamTiles
   if (teamTiles.length === 0) {
-    showTeams = <p className="message-no-teams">There aren't any teams for this theater yet.</p>
+    showTeams = <p className="message-no-entries">There aren't any teams for this theater yet.</p>
   }
 
   return (
@@ -28,3 +28,4 @@ const TeamsList = props => {
 }
 
 export default TeamsList
+
