@@ -61,18 +61,19 @@ const TheaterDetailsPage = (props) => {
         </div>
         <hr />
         <br />
-        <br />
         <ShowsList
-          key={theater.theaterId}
+          key={theaterId}
           theaterId={theaterId}
           shows={theater.shows}
         />
+        {newShowForm}
+        <br />
+        <hr />
         <TeamsList
           key={theater.theaterId}
           theaterId={theaterId}
           teams={theater.teams}
         />
-        {newShowForm}
       </div>
 		</>
 	)

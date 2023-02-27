@@ -13,7 +13,7 @@ const NewShowForm = (props) => {
   const [errors, setErrors] = useState([])
 
   const setTheater = props.setTheater
-  const theater = props.Theater
+  const theater = props.theater
 
   const addNewShow = async () => {
     const theaterId = props.theaterId
@@ -72,7 +72,6 @@ const NewShowForm = (props) => {
 
   return (
     <div className="form-section_show">
-      <hr />
       <h4 className="text-center form_header">Add a Show!</h4>
       <ErrorList errors={errors} />
       <form onSubmit={handleSubmit} className="callout form-section_box">
