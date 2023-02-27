@@ -2,6 +2,7 @@ import express from "express"
 import { Theater } from "../../../models/index.js"
 
 import TheaterSerializer from "../../../db/serializers/TheaterSerializer.js"
+import theaterShowsRouter from "./theaterShowsRouter.js"
 
 const theatersRouter = new express.Router()
 
@@ -31,5 +32,7 @@ theatersRouter.get("/:id", async (req, res) =>{
 		return res.status(500).json({ errors: error })
 	}
 })
+
+theatersRouter.use("/:theaterId/shows", theaterShowsRouter)
 
 export default theatersRouter

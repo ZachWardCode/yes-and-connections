@@ -5,6 +5,7 @@ import TheaterDetailsImageSlider from "./TheaterDetailsImageSlider";
 
 import TeamsList from "./TeamsList";
 import ShowsList from "./ShowsList";
+import NewShowForm from "./NewShowForm";
 
 const TheaterDetailsPage = (props) => {
   const [theater, setTheater] = useState({
@@ -17,6 +18,7 @@ const TheaterDetailsPage = (props) => {
   })
 
   const theaterId = props.match.params.theaterId 
+  const currentUserId = props.currentUser?.id
 
   const fetchTheater = async () => {
     try {
@@ -37,17 +39,29 @@ const TheaterDetailsPage = (props) => {
 		fetchTheater()
 	}, [])
 
+  let newShowForm = ""
+	if (props.currentUser !== null) {
+		newShowForm = <NewShowForm theaterId={theaterId} theater={theater} setTheater={setTheater} />
+	}
+
   return(
     <>
       <TheaterDetailsImageSlider slides={TheaterDetailsSliderData} />
       <br />
       <div className="grid-container text-center">
-        <div id="theater-details-header">
-          <h1>{theater.name}</h1>
-          <h3>{theater.location}</h3>
-          <h2>{theater.tagline}</h2>
-          <p className="subtitle">{theater.description}</p>
+        <div>
+          <h1 className="theater-details-header">{theater.name}</h1>
+          <h3 className="theater-details-location">{theater.location}</h3>
+          <br />
+          <br />
+          <h2 className="theater-details-tagline">{theater.tagline}</h2>
+          <br />
+          <hr />
+          <p className="theater-details-description">{theater.description}</p>
         </div>
+        <hr />
+        <br />
+        <br />
         <ShowsList
           key={theater.theaterId}
           theaterId={theaterId}
@@ -58,6 +72,7 @@ const TheaterDetailsPage = (props) => {
           theaterId={theaterId}
           teams={theater.teams}
         />
+        {newShowForm}
       </div>
 		</>
 	)

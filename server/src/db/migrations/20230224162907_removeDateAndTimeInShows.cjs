@@ -17,7 +17,7 @@ exports.up = async (knex) => {
  */
 exports.down = (knex) => {
   return knex.schema.table("shows", (table) => {
-    table.string("date").notNullable()
-    table.string("time").notNullable()
+    table.string("date")
+    table.string("time")
   })
 }
