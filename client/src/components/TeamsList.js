@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 
 import TeamTile from "./TeamTile"
 
@@ -19,7 +19,7 @@ const TeamsList = props => {
 
   return (
     <>
-      <h3 className="header_smaller">Improv Teams</h3>
+      <h3 className="header_smaller">Our Improv Teams</h3>
       <div className="grid-x grid-margin-x text-center">
         {showTeams}
       </div>

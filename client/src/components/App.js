@@ -10,6 +10,7 @@ import TopBar from "./layout/TopBar";
 
 import TheatersListPage from "./TheatersListPage";
 import TheaterDetailsPage from "./TheaterDetailsPage";
+import ShowDetailsPage from "./ShowDetailsPage";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -33,7 +34,10 @@ const App = (props) => {
         <Route exact path="/" component={TheatersListPage} />
         <Route exact path="/theaters" component={TheatersListPage} />
         <Route exact path="/theaters/:theaterId"
-          render={(props) => <TheaterDetailsPage {...props} currentUser={currentUser}/>} 
+          render={(props) => <TheaterDetailsPage {...props} currentUser={currentUser} />} 
+        />
+        <Route exact path="/theaters/:theaterId/shows/:showId"
+          render={(props) => <ShowDetailsPage {...props} currentUser={currentUser} />}
         />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />

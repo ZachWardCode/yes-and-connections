@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 
 import ShowTile from "./ShowTile"
 
-const ShowsList = props => {
+const ShowsList = (props) => {
+  const { theaterId } = props
   const showTiles = props.shows.map(show => {
     return (
       <ShowTile
         key={show.id}
         {...show}
+        showId={show.id}
+        theaterId={theaterId}
       />
     )
   })
@@ -19,7 +22,7 @@ const ShowsList = props => {
 
   return (
     <>
-      <h3 className="header_smaller">Improv Shows</h3>
+      <h3 className="header_smaller">Our Upcoming Shows</h3>
       <div className="grid-x grid-margin-x text-center">
         {showShows}
       </div>

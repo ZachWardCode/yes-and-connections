@@ -1,6 +1,6 @@
 import express from "express";
-import { Team } from "../../../models/index.js";
 
+import { Team } from "../../../models/index.js";
 import TeamSerializer from "../../../db/serializers/TeamSerializer.js";
 
 const teamsRouter = new express.Router()

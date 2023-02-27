@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 const ShowTile = props => {
-  const { name, eventTiming } = props
+  const { name, eventTiming, theaterId, showId } = props
 
   const date = new Date(eventTiming)
   const dateString = date.toLocaleDateString("en-us", { weekday: "long", year: "numeric", month: "long", day: "numeric" })
@@ -10,7 +10,7 @@ const ShowTile = props => {
 
   return (
     <div className="callout cell large-4 medium-6 small-12 text-center theater-tile">
-      <h5 className="theater-tile_header">{name} at {timeString}</h5>
+      <h5 className="theater-tile_header"><Link to={`/theaters/${theaterId}/shows/${showId}`}>{name} at {timeString}</Link></h5>
       <p className="theater-tile_body">{dateString}</p>
     </div>
   )

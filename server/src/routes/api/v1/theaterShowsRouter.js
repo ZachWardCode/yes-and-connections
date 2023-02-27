@@ -5,7 +5,7 @@ import cleanUserInput from "../../../services/cleanUserInput.js";
 import Show from "../../../models/Show.js";
 import ShowSerializer from "../../../db/serializers/ShowSerializer.js";
 
-const theaterShowsRouter = new express.Router({ mergeParams: true })
+const theaterShowsRouter = new express.Router({mergeParams: true})
 
 theaterShowsRouter.post("/", async (req, res) => {
   const formInput = cleanUserInput(req.body)
