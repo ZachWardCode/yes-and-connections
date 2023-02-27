@@ -81,6 +81,33 @@ body {
   font-size: 1.3em;
 }
 
+.theater-details-header {
+  font-family: monospace;
+  padding: 0px 20px 0px 20px;
+  margin: 0px 0px;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px $main-light-blue;
+  font-size: 4.5em;
+  border: 0px;
+}
+
+.theater-details-location {
+  font-family: monospace;
+}
+
+.theater-details-tagline {
+  font-family: monospace;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.theater-details-description {
+  color: #000000;
+  text-align: center;
+  padding: 0em 0em 0em 0em;
+  font-size: 1.4em;
+}
+
 .tagline {
   font-style: italic;
   font-weight: bold;
@@ -92,6 +119,32 @@ body {
   color: rgb(84, 84, 84);
   font-style: italic;
   font-size: .8em;
+}
+
+.form-section_show {
+  align-content: center;
+  width: 55%;
+  margin: 2em auto 2em;
+}
+
+.form-section_box {
+  border-width: 1px;
+  border-color: black;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px 3px $main-light-blue;
+}
+
+.form_header {
+  font-family: monospace;
+  color: $main-red;
+  font-weight: bold;
+}
+
+.button {
+  background-color: $main-yellow;
+  color: #000000;
+  border-radius: 10px;
+  border: black 1px solid;
 }
 
 .right-arrow {

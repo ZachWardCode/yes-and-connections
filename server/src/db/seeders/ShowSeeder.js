@@ -59,7 +59,6 @@ class ShowSeeder {
       {
         name: "Friday Night Kickoff",
         description: "Fridays are for fun, come check out our Friday Night Kickoff where one of our longform teams performs a dazzling 45 minute narrative that'll leave you laughing out of your seats. Followed by a jam!",
-        date: "April 28",
         eventTiming: "2023-03-08 19:30:00",
         userId: user1.id,
         theaterId: launchNLaughs.id
